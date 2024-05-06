@@ -82,6 +82,6 @@
   });
   
   function storeMedicine() {
-    form.post('/admin.medicines.store');
+    form.post('/admin/medicines/');
   }
   </script>

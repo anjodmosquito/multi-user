@@ -6,14 +6,6 @@ import { Link } from '@inertiajs/vue3';
 const props = defineProps({
     medicines: Array
 });
-
- /*props: {
-    medicine: {
-      type: Object,
-      required: true
-    }
-}*/
-
 function confirmDelete(medicineId) {
   if (confirm('Are you sure you want to delete this medicine?')) {
     // Call the deleteMedicine method
@@ -101,10 +93,10 @@ function confirmDelete(medicineId) {
                                         {{ medicine.expdate }}
                                     </td>
                                     <td class="flex px-6 py-4">
-                                        <Link :href="'/admin/medicines/' + medicine.id + '/edit'" class="px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded">
+                                        <Link :href="'/medicines/' + medicine.id + '/edit'" class="px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded">
                                         Edit
                                         </Link>
-                                        <Link :href="`/admin/medicines/${medicine.id}`" method="delete" @click="confirmDelete(medicine.id)" class="px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded">
+                                        <Link :href="`/medicines/${medicine.id}`" method="delete" @click="confirmDelete(medicine.id)" class="px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded">
                                             Delete
                                         </Link>
                                     </td>

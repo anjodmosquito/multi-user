@@ -4,6 +4,8 @@ use App\Http\Controllers\Admin\ProfileController as AdminProfileController;
 use App\Http\Controllers\Admin\AdminAuthenticatedSessionController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\MedicineController;
+use App\Http\Controllers\Admin\AnnouncementController;
+use App\Http\Controllers\InventoryController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -59,11 +61,18 @@ Route::prefix('admin')->name('admin.')->group(function () {
     return Inertia::render('Admin/Medicines/Index');
     })->name('admin.medicines');*/
     Route::get('/admin/medicines/index', [MedicineController::class, 'index'])->name('admin.medicines.index');
-    Route::post('/admin/medicines', [MedicineController::class, 'store'])->name('admin.medicines.store');
+    Route::post('/admin/medicines/', [MedicineController::class, 'store'])->name('admin.medicines.store');
     Route::get('/admin/medicines/create', [MedicineController::class, 'create'])->name('admin.medicines.create');    
     Route::put('/admin/medicines/{medicine}', [MedicineController::class, 'update'])->name('admin.medicines.update');
     Route::get('/admin/medicines/{medicine}/edit', [MedicineController::class, 'edit'])->name('admin.medicines.edit');
-    //Route::delete('/medicines/{medicine}', [MedicineController::class, 'destroy'])->name('admin.medicines.destroy');
+    Route::delete('/admin/medicines/{medicine}', [MedicineController::class, 'destroy'])->name('admin.medicines.destroy');
+    
+    //Announcements
+    Route::get('/admin/announcements/index', [AnnouncementController::class, 'index'])->name('admin.announcements.index');
+
+
+    //Users
+    Route::get('/medicines', [InventoryController::class, 'index'])->name('medicines.index');
 
 
 require __DIR__.'/auth.php';
