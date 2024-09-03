@@ -37,6 +37,9 @@ const submit = () => {
         <form @submit.prevent="submit">
             
             <div>
+                <div class="text-center text-2xl font-bold mb-4 text-black rounded">
+                    ADMIN LOGIN
+                </div>
                 <InputLabel for="email" value="Email" />
 
                 <TextInput
@@ -73,24 +76,27 @@ const submit = () => {
                     <span class="ml-2 text-sm text-gray-600 dark:text-gray-400">Remember me</span>
                 </label>
             </div>
+            <div  class="flex justify-center mt-4">
+                <Link
+                    v-if="canResetPassword"
+                    :href="route('password.request')"
+                    class=" underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
+                >
+                    Forgot your password?
+                </Link>
+            </div>
 
-            <div class="flex items-center justify-end mt-4 space-x-4">
+            <div class="flex items-center justify-between mt-4 space-x-4">
                 <Link
                     :href="route('login')"
-                    class="px-4 py-2 bg-green-500 hover:bg-green-500 text-white rounded small-font"
+                    class="px-4 py-2 bg-[#B5C99A] hover:bg-[#D2E0BE] text-black rounded small-font"
                 >
                     Log in as User
                 </Link>
 
-                <Link
-                    v-if="canResetPassword"
-                    :href="route('admin.password.request')"
-                    class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
-                >
-                    Forgot your password?
-                </Link>
+                
 
-                <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                <PrimaryButton class="px-4 py-2 ml-4 bg-[#B5C99A] hover:bg-[#D2E0BE] text-black rounded" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                     Log in
                 </PrimaryButton>
             </div>

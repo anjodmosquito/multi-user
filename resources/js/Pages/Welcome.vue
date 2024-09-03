@@ -13,8 +13,9 @@ defineProps({
     <Head title="Welcome" />
 
     <div
-        class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white"
-    >
+    class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center selection:bg-red-500 selection:text-white"
+    style="background-color: #FFF9E3;"
+        >
         <!--<div class="flex justify-center mb-8">
             
             <svg
@@ -40,14 +41,16 @@ defineProps({
             <template v-else>
                 <Link
                     :href="route('login')"
-                    class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-                    >Log in</Link
+                    class="font-semibold text-gray-800 hover:text-green bg-[#B5C99A] hover:bg-[#F0E8E2] focus:outline focus:outline-2 focus:rounded-sm focus:outline-green-100 px-4 py-2 rounded-lg shadow-md transition-colors duration-200 ease-in-out"
                 >
+                    Log in
+                </Link>
+
 
                 <Link
                     v-if="canRegister"
                     :href="route('register')"
-                    class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
+                    class="font-semibold text-gray-800 hover:text-green bg-[#B5C99A] hover:bg-[#F0E8E2] focus:outline focus:outline-2 focus:rounded-sm focus:outline-green-500 px-4 py-2 rounded-lg shadow-md transition-colors duration-200 ease-in-out"
                     >Register</Link
                 >
             </template>
@@ -57,7 +60,7 @@ defineProps({
     <!-- SVG Image -->
     <div class="flex flex-col items-center mb-8">
 
-        <div class="bg-green-100 items-center rounded-sm" style="border-radius: 20px; display: flex; justify-content: center; align-items: center; width: 50%; height: 100%;">
+        <div class="bg-white-100 items-center rounded-sm" style="border-radius: 12px; display: flex; justify-content: center; align-items: center; width: 67%; height: 100%;">
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="30%" viewBox="0 0 320 330" enable-background="new 0 0 320 320" xml:space="preserve">
                 <path fill="#FFFFFF" opacity="1.000000" stroke="none" 
                     d="
@@ -1909,15 +1912,17 @@ defineProps({
         </div>
 
         <!-- Text Content -->
-        <div class="bg-red-200 rounded-lg shadow-lg p-6 lg:w-2/3">
+        <div class="rounded-lg shadow-lg p-6 lg:w-2/3" style="background-color: #FFF9E3;">
+
             <div class="text-center text-xl font-semibold mb-4">
                 Welcome to Puremed Pharmacy! 💊✨
             </div>
-            <div class="justify-center text-sm text-gray-600 mb-4">
+            <div class="text-sm text-gray-600 mb-4 text-justify w-full">
                 With the pouring grace of God, Puremed Pharmacy is finally open and ready to serve you! 
                 We offer a wide range of prescription drugs, over-the-counter medications, and other healthcare needs. 
                 You may also send us a message if you have questions regarding your medications.
             </div>
+
             <div class="text-center text-lg font-medium text-gray-700 mb-4">
                 📍 NAVARRO STREET, SURIGAO CITY (near Crispy King beside Bridgestone)
             </div>
